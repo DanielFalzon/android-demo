@@ -10,6 +10,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.greetingcard.R
+import com.example.greetingcard.ui.screen.composearticle.ComposeArticleScreen
+import com.example.greetingcard.ui.screen.faction.FactionScreen
 
 @Composable
 fun NavigationView(
@@ -26,7 +28,8 @@ fun NavigationView(
             //Defining the navigation logic for each page with a button on the home page
             HomeScreen(
                 onNavigateToBirthday = { navController.navigate("exercise-1-birthday") },
-                onNavigateToComposeArticle = { navController.navigate("exercise-2-compose-article")}
+                onNavigateToComposeArticle = { navController.navigate("exercise-2-compose-article")},
+                onNavigateToFactions = { navController.navigate("exercise-3-superhero-factions")}
             )
         }
         composable("exercise-1-birthday") {
@@ -36,6 +39,16 @@ fun NavigationView(
                 modifier = modifier,
                 onNavigateToHome = { navController.navigate("home") }
             )
+        }
+        composable("exercise-2-compose-article") {
+            ComposeArticleScreen {
+                navController.navigate("home")
+            }
+        }
+        composable("exercise-3-superhero-factions") {
+            FactionScreen{
+                navController.navigate("home")
+            }
         }
     }
 }

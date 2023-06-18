@@ -24,7 +24,8 @@ import com.example.greetingcard.ui.theme.GreetingCardTheme
 @Composable
 fun HomeScreen(
     onNavigateToBirthday: () -> Unit,
-    onNavigateToComposeArticle: () -> Unit
+    onNavigateToComposeArticle: () -> Unit,
+    onNavigateToFactions: () -> Unit
 ) {
     Column (
         verticalArrangement = Arrangement.Top,
@@ -48,11 +49,17 @@ fun HomeScreen(
         ) {
             Text(text = "Birthday Greeting Card", color = Color.White)
         }
-        Button( onClick = onNavigateToBirthday,
+        Button( onClick = onNavigateToComposeArticle,
             colors = ButtonDefaults.buttonColors(containerColor = Color.DarkGray),
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Compose Article", color = Color.White)
+        }
+        Button( onClick = onNavigateToFactions,
+            colors = ButtonDefaults.buttonColors(containerColor = Color.DarkGray),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Factions", color = Color.White)
         }
     }
 }
@@ -63,6 +70,6 @@ fun HomeScreen(
 fun HomeScreenPreview() {
     GreetingCardTheme {
         //HomeOptions(onNavigateToComposeArticle = {}, onNavigateToBirthday = {})
-        HomeScreen(onNavigateToBirthday = {}, onNavigateToComposeArticle = {})
+        HomeScreen(onNavigateToBirthday = {}, onNavigateToComposeArticle = {}, onNavigateToFactions = {})
     }
 }
