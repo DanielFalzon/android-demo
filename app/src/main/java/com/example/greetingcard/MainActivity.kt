@@ -24,8 +24,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             GreetingCardTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    NavigationView()
+                Surface(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    NavigationView(modifier = Modifier.fillMaxSize())
                 }
             }
         }
